@@ -20,7 +20,10 @@ SRCS 	= \
 		${SRC_DIR}ft_strlen.c \
 		${SRC_DIR}ft_isalpha.c \
 		${SRC_DIR}ft_isupper.c \
-		${SRC_DIR}ft_islower.c
+		${SRC_DIR}ft_islower.c \
+		${SRC_DIR}ft_isdigit.c \
+		${SRC_DIR}ft_isalnum.c
+
 
 
 OBJS 	= ${SRCS:.c=.o}
