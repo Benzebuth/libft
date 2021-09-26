@@ -7,14 +7,20 @@ CFLAGS 	= -Wall -Werror -Wextra
 
 RM 		= rm -f
 
-#add dir here
+#header path
+HEADER 	= -I includes
+
+#add path of dir here
 SRC_DIR 	= srcs/
 STRING 		= string/
 DATA_STRUCT = data_structures/
 
 #list of srcs with path
-SRCS 	= ${SRC_DIR}main.c \
-		${SRC_DIR}ft_strlen.c
+SRCS 	= \
+		${SRC_DIR}ft_strlen.c \
+		${SRC_DIR}ft_isalpha.c \
+		${SRC_DIR}ft_isupper.c \
+		${SRC_DIR}ft_islower.c
 
 
 OBJS 	= ${SRCS:.c=.o}
@@ -24,7 +30,7 @@ OBJS 	= ${SRCS:.c=.o}
 all 	: 	${NAME}
 
 %.o 	: 	%.c
-				${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+				${CC} ${CFLAGS} -c ${HEADER} $< -o ${<:.c=.o}
 
 ${NAME} : 	${OBJS}
 				ar -rcs $@ $^
