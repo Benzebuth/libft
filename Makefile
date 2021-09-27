@@ -12,18 +12,22 @@ HEADER 	= -I includes
 
 #add path of dir here
 SRC_DIR 	= srcs/
+CTYPE 		= ctype/
 STRING 		= string/
 DATA_STRUCT = data_structures/
 
 #list of srcs with path
 SRCS 	= \
-		${SRC_DIR}ft_strlen.c \
-		${SRC_DIR}ft_isalpha.c \
-		${SRC_DIR}ft_isupper.c \
-		${SRC_DIR}ft_islower.c \
-		${SRC_DIR}ft_isdigit.c \
-		${SRC_DIR}ft_isalnum.c
-
+		${SRC_DIR}${CTYPE}ft_isalpha.c \
+		${SRC_DIR}${CTYPE}ft_isupper.c \
+		${SRC_DIR}${CTYPE}ft_islower.c \
+		${SRC_DIR}${CTYPE}ft_isdigit.c \
+		${SRC_DIR}${CTYPE}ft_isalnum.c \
+		${SRC_DIR}${CTYPE}ft_isascii.c \
+		${SRC_DIR}${CTYPE}ft_isprint.c \
+		${SRC_DIR}${CTYPE}ft_toupper.c \
+		${SRC_DIR}${CTYPE}ft_tolower.c \
+		${SRC_DIR}${STRING}ft_strlen.c
 
 
 OBJS 	= ${SRCS:.c=.o}
