@@ -27,7 +27,13 @@ SRCS 	= \
 		${SRC_DIR}${CTYPE}ft_isprint.c \
 		${SRC_DIR}${CTYPE}ft_toupper.c \
 		${SRC_DIR}${CTYPE}ft_tolower.c \
-		${SRC_DIR}${STRING}ft_strlen.c
+		${SRC_DIR}${STRING}ft_strlen.c \
+		${SRC_DIR}${STRING}ft_strncmp.c \
+		${SRC_DIR}${STRING}ft_strchr.c \
+		${SRC_DIR}${STRING}ft_strrchr.c \
+		${SRC_DIR}${STRING}ft_strlcpy.c
+
+
 
 
 OBJS 	= ${SRCS:.c=.o}
