@@ -7,7 +7,12 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 
-// ctype
+//memory
+void	*ft_memset(void *b, int c, size_t len);
+void	ft_bzero(void *s, size_t n);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+
+//ctype
 int ft_isalpha(int c);
 int ft_isupper(int c);
 int ft_islower(int c);
@@ -39,6 +44,21 @@ int	main(void)
 	printf("strrchr   - %5s  - \"bienvenu\", e \n", ft_strrchr(s1, 'e'));
 	printf("strrchr2  - %5s  - \"bienvonu\", o \n", ft_strrchr(s2, 'o'));
 	printf("strrchr3  - %5s  - \"bienvonu\", x \n\n", ft_strrchr(s2, 'x'));
+	
+	// test memory
+	printf("memset    - %5s  - \"bienvonu\", A , 3\n", ft_memset(s1, 'A', 3));
+	printf("memset2   - %5s  - \"bienvonu\", W , 2 \n\n", ft_memset(s2, 'W', 2));
+
+	ft_bzero(s1, 3);
+	ft_bzero(s2, 2);
+	printf("bzero     - %5s  - \"bienvonu\", 3\n", s1);
+	printf("bzero2    - %5s  - \"bienvonu\", 2 \n\n", s2);
+
+	char s1_memcpy[10];
+	char s2_memcpy[5];
+	printf("memcpy    - %5s  - \"copiercoller\", 5 \n", ft_memcpy(s1_memcpy, "copiercoller", 5));
+	printf("memcpy2   - %5s  - \"copiercoller\", 2\n", ft_memcpy(s2_memcpy, "copiercoller", 2));
+
 
 	// test caracter type
 	printf("\n-- Test carater type --\n\n");

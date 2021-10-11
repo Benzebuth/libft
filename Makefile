@@ -14,6 +14,7 @@ HEADER 	= -I includes
 SRC_DIR 	= srcs/
 CTYPE 		= ctype/
 STRING 		= string/
+MEMORY 		= memory/
 DATA_STRUCT = data_structures/
 
 #list of srcs with path
@@ -31,7 +32,10 @@ SRCS 	= \
 		${SRC_DIR}${STRING}ft_strncmp.c \
 		${SRC_DIR}${STRING}ft_strchr.c \
 		${SRC_DIR}${STRING}ft_strrchr.c \
-		${SRC_DIR}${STRING}ft_strlcpy.c
+		${SRC_DIR}${STRING}ft_strlcpy.c \
+		${SRC_DIR}${MEMORY}ft_memset.c \
+		${SRC_DIR}${MEMORY}ft_bzero.c \
+		${SRC_DIR}${MEMORY}ft_memcpy.c 
 
 
 

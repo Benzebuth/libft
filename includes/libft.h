@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/11 17:09:08 by bcolin            #+#    #+#             */
+/*   Updated: 2021/10/11 19:42:44 by bcolin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -12,6 +24,11 @@ size_t  ft_strlcpy(char *dest, const char *src, size_t size);
 int     ft_strncmp(const char *s1, const char *s2, size_t n);
 char    *ft_strchr(const char *s, int c);
 char    *ft_strrchr(const char *s, int c);
+
+// memory
+void	*ft_memset(void *b, int c, size_t len);
+void	ft_bzero(void *s, size_t n);
+void	*ft_memcpy(void *dst, void const *src, size_t n);
 
 // caracter type
 int ft_isalpha(int c);
