@@ -35,7 +35,11 @@ SRCS 	= \
 		${SRC_DIR}${STRING}ft_strlcpy.c \
 		${SRC_DIR}${MEMORY}ft_memset.c \
 		${SRC_DIR}${MEMORY}ft_bzero.c \
-		${SRC_DIR}${MEMORY}ft_memcpy.c 
+		${SRC_DIR}${MEMORY}ft_memcpy.c \
+		${SRC_DIR}${MEMORY}ft_memccpy.c \
+		${SRC_DIR}${MEMORY}ft_memmove.c \
+		${SRC_DIR}${MEMORY}ft_memchr.c \
+		${SRC_DIR}${MEMORY}ft_memcmp.c
 
 
 
