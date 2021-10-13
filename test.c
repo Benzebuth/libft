@@ -6,6 +6,8 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
+int		ft_atoi(const char *nptr);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
 //memory
 void	*ft_memset(void *b, int c, size_t len);
@@ -37,7 +39,7 @@ int	main(void)
 	// test caracter type
 	printf("\033[1;31m");
 	printf("\n-- Test carater type --\n\n");
-	printf("\033[0;32m");
+	printf("\033[0;33m");
 
 	printf("is alpha  - %d - a \n\n", ft_isalpha('a'));
 
@@ -73,7 +75,7 @@ int	main(void)
 	// test string
 	printf("\033[1;31m");
 	printf("\n-- Test string -- \n\n");
-	printf("\033[0;32m");
+	printf("\033[0;34m");
 	printf("strlen - %ld - \"coucou je suis la.\"\n\n", ft_strlen("coucou je suis la."));
 
 	printf("strncmp - %d - \"bienvenu\", \"bienvonu\", 5 \n", ft_strncmp(s1, s2, 5));
@@ -92,10 +94,14 @@ int	main(void)
 	printf("strlcpy - return : %lu / new cpy : %s / \"copypaste\", 6 \n\n",
 			ft_strlcpy(s1_strlcpy, s2_strlcpy, 6), s1_strlcpy);
 
+	printf("atoi  - %d - \"	 +-459nasdf\" \n", ft_atoi("	 +-459nasdf"));
+	printf("atoi2 - %d - \"	 +--459nasdf\" \n", ft_atoi("	 +--459nasdf"));
+	printf("atoi3 - %d - \"	 ++6345vdf\" \n\n", ft_atoi("	 ++6345vdf"));
+
 	// test memory
 	printf("\033[1;31m");
 	printf("\n-- Test memory -- \n\n");
-	printf("\033[0;32m");
+	printf("\033[0;35m");
 	printf("memset - %s - \"bienvonu\", A , 3\n", (char*)ft_memset(s1, 'A', 3));
 	printf("memset2 - %s - \"bienvonu\", W , 2 \n\n", (char*)ft_memset(s2, 'W', 2));
 
