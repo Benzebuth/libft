@@ -30,17 +30,20 @@ SRCS 	= \
 		${SRC_DIR}${CTYPE}ft_tolower.c \
 		${SRC_DIR}${STRING}ft_strlen.c \
 		${SRC_DIR}${STRING}ft_atoi.c \
+		${SRC_DIR}${STRING}ft_strdup.c \
 		${SRC_DIR}${STRING}ft_strncmp.c \
 		${SRC_DIR}${STRING}ft_strchr.c \
 		${SRC_DIR}${STRING}ft_strrchr.c \
 		${SRC_DIR}${STRING}ft_strlcat.c \
 		${SRC_DIR}${STRING}ft_strlcpy.c \
+		${SRC_DIR}${STRING}ft_strnstr.c \
 		${SRC_DIR}${MEMORY}ft_memset.c \
 		${SRC_DIR}${MEMORY}ft_bzero.c \
 		${SRC_DIR}${MEMORY}ft_memcpy.c \
 		${SRC_DIR}${MEMORY}ft_memccpy.c \
 		${SRC_DIR}${MEMORY}ft_memmove.c \
 		${SRC_DIR}${MEMORY}ft_memchr.c \
+		${SRC_DIR}${MEMORY}ft_calloc.c \
 		${SRC_DIR}${MEMORY}ft_memcmp.c
 
 

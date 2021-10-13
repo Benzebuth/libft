@@ -8,6 +8,8 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_atoi(const char *nptr);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
+char	*ft_strnstr(const char *s1, const char *s2, size_t n);
+char	*ft_strdup(const char *s);
 
 //memory
 void	*ft_memset(void *b, int c, size_t len);
@@ -17,6 +19,7 @@ void	*ft_memccpy(void *dest, const void *src,int c, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	*ft_calloc(size_t nmemb, size_t size);
 
 //ctype
 int ft_isalpha(int c);
@@ -94,9 +97,31 @@ int	main(void)
 	printf("strlcpy - return : %lu / new cpy : %s / \"copypaste\", 6 \n\n",
 			ft_strlcpy(s1_strlcpy, s2_strlcpy, 6), s1_strlcpy);
 
-	printf("atoi  - %d - \"	 +-459nasdf\" \n", ft_atoi("	 +-459nasdf"));
-	printf("atoi2 - %d - \"	 +--459nasdf\" \n", ft_atoi("	 +--459nasdf"));
-	printf("atoi3 - %d - \"	 ++6345vdf\" \n\n", ft_atoi("	 ++6345vdf"));
+	printf("atoi  - %d - \"	 -459nasdf\" \n", ft_atoi("	 -459nasdf"));
+	printf("atoi2 - %d - \"	 --459nasdf\" \n", ft_atoi("	 --459nasdf"));
+	printf("atoi3 - %d - \"	 +6345vdf\" \n", ft_atoi("	 +6345vdf"));
+	printf("atoi4 - %d - \"+-54\" \n\n", ft_atoi("+-54"));
+
+	char s1_strlcat[20] = "helloworld";
+	char s2_strlcat[20] = "copypaste";
+	printf("strlcat - %zu - \"helloworld\"\"copypaste\", 20\n", ft_strlcat(s1_strlcat, s2_strlcat, 20));
+	printf("s1_strlcat : %s\n", s1_strlcat);
+	char s1_strlcat_bis[20] = "helloworld";
+	printf("strlcat - %zu - \"helloworld\"\"copypaste\", 13\n", ft_strlcat(s1_strlcat_bis, s2_strlcat, 13));
+	printf("s1_strlcat : %s\n\n", s1_strlcat_bis);
+
+	char s1_strnstr[20] = "hello ici coucou moi";
+	char s1_strnstr_bis[30] = "hello moi ici coucou moi";
+	char s2_strnstr[20] = "moi";
+	printf("strnstr - %s - \"hello ici coucou moi\"\"moi\", 20\n", ft_strnstr(s1_strnstr, s2_strnstr, 20));
+	printf("strnstr - %s - \"hello moi ici coucou moi\"\"moi\", 20\n", ft_strnstr(s1_strnstr_bis, s2_strnstr, 20));
+	printf("strnstr - %s - \"hello ici coucou moi\"\"moi\", 5\n", ft_strnstr(s1_strnstr, s2_strnstr, 5));
+	printf("strnstr - %s - \"hello ici coucou moi\" \"\", 5\n\n", ft_strnstr(s1_strnstr, "", 5));
+
+	char s1_strdup[20] = "i am the new one";
+	char *ptr_receive = ft_strdup(s1_strdup);
+	printf("ft_strdup - %s - \n", ptr_receive);
+
 
 	// test memory
 	printf("\033[1;31m");
@@ -134,6 +159,8 @@ int	main(void)
 	printf("memcmp  - %d - \"allooo\" & \"allooz\", 5 \n", ft_memcmp(s1_memcmp, s2_memcmp, 5));
 	printf("memcmp2 - %d - \"allooo\" & \"allooz\", 10 \n", ft_memcmp(s1_memcmp, s2_memcmp, 10));
 	printf("memcmp3 - %d - \"allooo\" & \"allooz\", 0 \n\n", ft_memcmp(s1_memcmp, s2_memcmp, 0));
+
+	printf("calloc - %p - 5 , int\n", ft_calloc( 5, sizeof(int)));
 
 	return (0);
 }
