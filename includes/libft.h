@@ -16,6 +16,7 @@
 // include list
 # include <stddef.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 // prototype
 // string
@@ -28,6 +29,7 @@ int     ft_atoi(const char *nptr);
 size_t  ft_strlcat(char *dst, const char *src, size_t size);
 char    *ft_strnstr(const char *s1, const char *s2, size_t n);
 char    *ft_strdup(const char *s);
+char    *ft_itoa(int n);
 
 // memory
 void	*ft_memset(void *b, int c, size_t len);
@@ -49,6 +51,12 @@ int ft_isascii(int c);
 int ft_isprint(int c);
 int ft_toupper(int c);
 int ft_tolower(int c);
+
+// IO
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putendl_fd(char *s, int fd);
 
 
 #endif

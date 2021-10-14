@@ -10,6 +10,7 @@ int		ft_atoi(const char *nptr);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 char	*ft_strdup(const char *s);
+char	*ft_itoa(int n);
 
 //memory
 void	*ft_memset(void *b, int c, size_t len);
@@ -32,14 +33,18 @@ int ft_isprint(int c);
 int	ft_toupper(int c);
 int	ft_tolower(int c);
 
+//IO
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
 
 int	main(void)
 {
-	//test variable
+//test variable
 	char s1[] = "bienvenu";
 	char s2[] = "bienvonu";
 
-	// test caracter type
+// test caracter type
 	printf("\033[1;31m");
 	printf("\n-- Test carater type --\n\n");
 	printf("\033[0;33m");
@@ -75,7 +80,7 @@ int	main(void)
 	printf("tolower2  - %d - C \n\n", ft_tolower('C'));
 
 
-	// test string
+// test string
 	printf("\033[1;31m");
 	printf("\n-- Test string -- \n\n");
 	printf("\033[0;34m");
@@ -120,10 +125,15 @@ int	main(void)
 
 	char s1_strdup[20] = "i am the new one";
 	char *ptr_receive = ft_strdup(s1_strdup);
-	printf("ft_strdup - %s - \n", ptr_receive);
+	printf("ft_strdup - %s - \n\n", ptr_receive);
 
+	printf("itoa - %s / 304\n", ft_itoa(304));
+	printf("itoa - %s / 0\n", ft_itoa(0));
+	printf("itoa - %s / -125\n", ft_itoa(-125));
+	printf("itoa - %s / -8\n", ft_itoa(-8));
+	printf("itoa - %s / -2147483648\n\n", ft_itoa(-2147483648));
 
-	// test memory
+// test memory
 	printf("\033[1;31m");
 	printf("\n-- Test memory -- \n\n");
 	printf("\033[0;35m");
@@ -160,7 +170,28 @@ int	main(void)
 	printf("memcmp2 - %d - \"allooo\" & \"allooz\", 10 \n", ft_memcmp(s1_memcmp, s2_memcmp, 10));
 	printf("memcmp3 - %d - \"allooo\" & \"allooz\", 0 \n\n", ft_memcmp(s1_memcmp, s2_memcmp, 0));
 
-	printf("calloc - %p - 5 , int\n", ft_calloc( 5, sizeof(int)));
+	printf("calloc - %p - 5 , int\n\n", ft_calloc( 5, sizeof(int)));
+
+// IO
+#include <fcntl.h>
+
+	int myfile;
+
+	myfile = open("test_putchar_fd.txt", O_RDWR);
+	if (myfile < 0)
+		printf("error path file.");
+	ft_putchar_fd('h', myfile);
+	ft_putchar_fd('e', myfile);
+	ft_putchar_fd('l', myfile);
+	ft_putchar_fd('l', myfile);
+	ft_putchar_fd('o', myfile);
+
+	ft_putstr_fd(" world", myfile);
+
+	ft_putendl_fd(" and sky", myfile);
+	ft_putstr_fd("new line !", myfile);
+
+	printf("putchar_fd\nputstr_fd\nputendl_fd - checkfile test_putchar_fd.txt\n\n");
 
 	return (0);
 }

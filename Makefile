@@ -15,6 +15,7 @@ SRC_DIR 	= srcs/
 CTYPE 		= ctype/
 STRING 		= string/
 MEMORY 		= memory/
+IO			= io/
 DATA_STRUCT = data_structures/
 
 #list of srcs with path
@@ -37,6 +38,7 @@ SRCS 	= \
 		${SRC_DIR}${STRING}ft_strlcat.c \
 		${SRC_DIR}${STRING}ft_strlcpy.c \
 		${SRC_DIR}${STRING}ft_strnstr.c \
+		${SRC_DIR}${STRING}ft_itoa.c \
 		${SRC_DIR}${MEMORY}ft_memset.c \
 		${SRC_DIR}${MEMORY}ft_bzero.c \
 		${SRC_DIR}${MEMORY}ft_memcpy.c \
@@ -44,7 +46,11 @@ SRCS 	= \
 		${SRC_DIR}${MEMORY}ft_memmove.c \
 		${SRC_DIR}${MEMORY}ft_memchr.c \
 		${SRC_DIR}${MEMORY}ft_calloc.c \
-		${SRC_DIR}${MEMORY}ft_memcmp.c
+		${SRC_DIR}${MEMORY}ft_memcmp.c \
+		${SRC_DIR}${IO}ft_putchar_fd.c \
+		${SRC_DIR}${IO}ft_putnbr_fd.c \
+		${SRC_DIR}${IO}ft_putendl_fd.c \
+		${SRC_DIR}${IO}ft_putstr_fd.c
 
 
 
