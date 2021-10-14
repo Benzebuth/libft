@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 17:34:06 by bcolin            #+#    #+#             */
-/*   Updated: 2021/10/14 21:04:36 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/10/14 21:54:41 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char **ft_split(const char *s, char c)
 	while (*s == c)
 		s++;
 	if (*s == 0)
-		return ((char **)ft_strdup(""));	
+		return ((void *)0);	
 	nb_sep = ft_count_sep(s, c);
 	dst = (char **)malloc(sizeof(char *) * (nb_sep + 1));
 	if (!dst)
