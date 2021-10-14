@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 17:09:08 by bcolin            #+#    #+#             */
-/*   Updated: 2021/10/11 19:42:44 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/10/14 18:26:09 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ size_t  ft_strlcat(char *dst, const char *src, size_t size);
 char    *ft_strnstr(const char *s1, const char *s2, size_t n);
 char    *ft_strdup(const char *s);
 char    *ft_itoa(int n);
+char    **ft_split(const char *s, char c);
 
 // memory
 void	*ft_memset(void *b, int c, size_t len);

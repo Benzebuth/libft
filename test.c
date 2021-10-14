@@ -11,6 +11,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 char	*ft_strdup(const char *s);
 char	*ft_itoa(int n);
+char	**ft_split(const char *s, char c);
 
 //memory
 void	*ft_memset(void *b, int c, size_t len);
@@ -132,6 +133,15 @@ int	main(void)
 	printf("itoa - %s / -125\n", ft_itoa(-125));
 	printf("itoa - %s / -8\n", ft_itoa(-8));
 	printf("itoa - %s / -2147483648\n\n", ft_itoa(-2147483648));
+
+	printf("split - \"XXXlouXXcouXXXcaXva\", 'X'\n");
+	int c_split = 0;
+	char **split_recu = ft_split("XXXlouXXcouXXXcaXva", 'X');
+	while (c_split <= 4)
+	{
+		printf("%s\n", split_recu[c_split]);
+		c_split++;
+	}
 
 // test memory
 	printf("\033[1;31m");

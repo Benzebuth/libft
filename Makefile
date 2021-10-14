@@ -39,6 +39,7 @@ SRCS 	= \
 		${SRC_DIR}${STRING}ft_strlcpy.c \
 		${SRC_DIR}${STRING}ft_strnstr.c \
 		${SRC_DIR}${STRING}ft_itoa.c \
+		${SRC_DIR}${STRING}ft_split.c \
 		${SRC_DIR}${MEMORY}ft_memset.c \
 		${SRC_DIR}${MEMORY}ft_bzero.c \
 		${SRC_DIR}${MEMORY}ft_memcpy.c \
@@ -61,11 +62,11 @@ OBJS 	= ${SRCS:.c=.o}
 # build
 all 	: 	${NAME}
 
+$(NAME) : 	${OBJS}
+				ar -rcs $@ $^
+
 %.o 	: 	%.c
 				${CC} ${CFLAGS} -c ${HEADER} $< -o ${<:.c=.o}
-
-${NAME} : 	${OBJS}
-				ar -rcs $@ $^
 
 clean 	:
 				${RM} ${OBJS}
