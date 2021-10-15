@@ -12,71 +12,74 @@
 
 #include "libft.h"
 
-static int	ft_count_sep(const char *s, char c)
+static int	ft_issep(const char s, char sep)
 {
-	int	s_len;
-	int	count;
-
-	count = 0;
-	s_len = ft_strlen(s);
-	while (s_len--)
-	{
-		if (*s == c)
-			count++;
-		s++;
-	}
-	return (++count);
+	if (s == sep)
+		return (1);
+	else
+		return (0);
 }
 
-static char	*ft_create_str(const char *s, int offset, int *i, char c)
+static int	ft_count_words(const char *str, char sep)
 {
-	char	 *new_tab;
-	int		index;
-	int 	j;
+	int	nb_words;
+	int	flag;
 
-	index = *i - offset;
-	new_tab = (char *)malloc(sizeof(char) * (offset + 1));
-	j = 0;
-	while (index < *i)
+	nb_words = 0;
+	flag = 0;
+	while (*str)
 	{
-		new_tab[j++] = s[index++];
+		if (!(ft_issep(*str, sep)) && flag == 0)
+		{
+			flag = 1;
+			nb_words++;
+		}
+		else
+			flag = 0;
+		str++;
 	}
-	new_tab[j] = '\0';
-	while (s[*i] == c)
-		*i += 1;
-	return (new_tab);
+	return (nb_words);
 }
 
-#include <stdio.h>
-char **ft_split(const char *s, char c)
+static char	*ft_create_word(const char *str, int offset, int str_end)
+{
+	char	*new_word;
+	int		i;
+
+	new_word = (char *)malloc(sizeof(char) * (str_end - offset + 1));
+	if (!new_word)
+		return (NULL);
+	i = 0;
+	while (offset < str_end)
+		new_word[i++] = str[offset++];
+	new_word[i] = '\0';
+	return (new_word);
+}
+
+char	**ft_split(const char *s, char c)
 {
 	char	**dst;
-	int		nb_sep;
+	size_t	i;
+	size_t	j;
 	int		offset;
-	int		i;
-	int		j;
 
-	while (*s == c)
-		s++;
-	if (*s == 0)
-		return ((void *)0);	
-	nb_sep = ft_count_sep(s, c);
-	dst = (char **)malloc(sizeof(char *) * (nb_sep + 1));
-	if (!dst)
-		return (NULL);
-	offset = -1;
-	i = -1;
+	dst = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
+	if (!s || !dst)
+		return (0);
+	i = 0;
 	j = 0;
-	while (s[++i])
+	offset = -1;
+	while (i <= ft_strlen(s))
 	{
-		offset++;
-		if (s[i] == c)
+		if (!(ft_issep(s[i], c)) && offset < 0)
+			offset = i;
+		else if ((ft_issep(s[i], c) || i == ft_strlen(s)) && offset >= 0)
 		{
-			dst[j++] = ft_create_str(s, offset, &i, c);
-			offset = 0;
+			dst[j++] = ft_create_word(s, offset, i);
+			offset = -1;
 		}
+		i++;
 	}
-	if (i != -1)
-		dst[j] = ft_create_str(s, ++offset, &i, c);
+	dst[j] = (void *)0;
 	return (dst);
 }

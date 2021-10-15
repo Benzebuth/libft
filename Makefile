@@ -40,6 +40,11 @@ SRCS 	= \
 		${SRC_DIR}${STRING}ft_strnstr.c \
 		${SRC_DIR}${STRING}ft_itoa.c \
 		${SRC_DIR}${STRING}ft_split.c \
+		${SRC_DIR}${STRING}ft_substr.c \
+		${SRC_DIR}${STRING}ft_strjoin.c \
+		${SRC_DIR}${STRING}ft_strtrim.c \
+		${SRC_DIR}${STRING}ft_strmapi.c \
+		${SRC_DIR}${STRING}ft_striteri.c \
 		${SRC_DIR}${MEMORY}ft_memset.c \
 		${SRC_DIR}${MEMORY}ft_bzero.c \
 		${SRC_DIR}${MEMORY}ft_memcpy.c \

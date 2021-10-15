@@ -12,6 +12,11 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 char	*ft_strdup(const char *s);
 char	*ft_itoa(int n);
 char	**ft_split(const char *s, char c);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 //memory
 void	*ft_memset(void *b, int c, size_t len);
@@ -38,6 +43,22 @@ int	ft_tolower(int c);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
+
+// function for test
+char mapi_func(unsigned int i, char c)
+{
+	return (c + i);
+}
+
+void striteri_func(unsigned int i, char *str)
+{
+	while (*str)
+	{
+		*str += i;
+		str++;
+	}
+}
+
 
 int	main(void)
 {
@@ -139,9 +160,31 @@ int	main(void)
 	char **split_recu = ft_split("XXXlouXXcouXXXcaXva", 'X');
 	while (c_split <= 4)
 	{
-		printf("%s\n", split_recu[c_split]);
+		printf("out:%s\n", split_recu[c_split]);
 		c_split++;
 	}
+
+	printf("\nsubstr - %s - couloubou, 4, 3\n\n", ft_substr("couloubou", 4, 3));
+
+	printf("strjoin - %s - couloubou, HELLO\n\n", ft_strjoin("couloubou", "HELLO"));
+
+	printf("strtrim - %s - XUXcouXlouXXbouXUXX, 'X'\n",
+			ft_strtrim("XUXcouXlouXXbouXUXX", "X"));
+	printf("strtrim - %s - XUXcouXlouXXbouXUXX, 'XU'\n",
+			ft_strtrim("XUXcouXlouXXbouXUXX", "XU"));
+	printf("strtrim - %s - 'XU Xcou Xlo u XXbo u X  UXX', ' '\n",
+			ft_strtrim("XU Xcou Xlo u XXbo u X  UXX", " "));
+	printf("strtrim - %s - '      ', ' ' \n\n",
+			ft_strtrim("        ", " "));
+
+
+	char str_mapi[] = "abcdefg";
+	char (*ptr_mapi)(unsigned int, char) = mapi_func; // create ptr of function + assignation
+	printf("strmapi - %s - \"abcdefg\"\n", ft_strmapi(str_mapi, mapi_func));
+
+	char str_striteri[] = "abcdefg";
+	ft_striteri(str_striteri, striteri_func);
+	printf("striteri - %s - \"abcdefg\"\n", str_striteri);
 
 // test memory
 	printf("\033[1;31m");
@@ -185,6 +228,9 @@ int	main(void)
 // IO
 #include <fcntl.h>
 
+	printf("\033[1;31m");
+	printf("\n-- Test IO -- \n\n");
+	printf("\033[0;36m");
 	int myfile;
 
 	myfile = open("test_putchar_fd.txt", O_RDWR);
