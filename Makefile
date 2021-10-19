@@ -63,8 +63,13 @@ OBJS 		= ${SRCS:.c=.o}
 BONUS_SRCS 	= \
 		${SRC_DIR}${DATA_LIST}ft_lstnew.c \
 		${SRC_DIR}${DATA_LIST}ft_lstadd_front.c \
+		${SRC_DIR}${DATA_LIST}ft_lstadd_back.c \
 		${SRC_DIR}${DATA_LIST}ft_lstsize.c \
-		${SRC_DIR}${DATA_LIST}ft_lstlast.c
+		${SRC_DIR}${DATA_LIST}ft_lstlast.c \
+		${SRC_DIR}${DATA_LIST}ft_lstdelone.c \
+		${SRC_DIR}${DATA_LIST}ft_lstclear.c \
+		${SRC_DIR}${DATA_LIST}ft_lstiter.c \
+		${SRC_DIR}${DATA_LIST}ft_lstmap.c
 
 BONUS_OBJS 	= ${BONUS_SRCS:.c=.o}
 
@@ -81,7 +86,7 @@ bonus	:	${OBJS} ${BONUS_OBJS}
 				ar -rcs $(NAME) $^
 
 clean 	:
-				${RM} ${OBJS}
+				${RM} ${OBJS} ${BONUS_OBJS}
 
 fclean 	: 	clean
 				${RM} ${NAME}

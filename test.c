@@ -53,6 +53,7 @@ typedef	struct	s_list
 
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **alst, t_list *new);
+void	ft_lstadd_back(t_list **alst, t_list *new);
 int		ft_lstsize(t_list *lst);
 
 // function for test
@@ -271,14 +272,18 @@ int	main(void)
 	int i_recu;
 	t_list *recu;
 	t_list *recu2;
+	t_list *recu3;
 
 	i = 26;
 	recu = ft_lstnew(((void *)i));
 	recu2 = ft_lstnew(((void *)i));
+	recu3 = ft_lstnew(((void *)i));
 	ft_lstadd_front(&recu, recu2);
+	ft_lstadd_back(&recu, recu3);
 	i_recu = (long int)recu->content;
 	printf("lstnew - %d\n", i_recu);
 	printf("lstadd_front + content:%d\n", i_recu);
+	printf("lstadd_back + content:%d\n", i_recu);
 	printf("lstsize - %d\n\n", ft_lstsize(recu));
 
 	return (0);
