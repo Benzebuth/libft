@@ -16,7 +16,7 @@ CTYPE 		= ctype/
 STRING 		= string/
 MEMORY 		= memory/
 IO			= io/
-DATA_STRUCT = data_structures/
+DATA_LIST 	= data_list/
 
 #list of srcs with path
 SRCS 	= \
@@ -58,11 +58,15 @@ SRCS 	= \
 		${SRC_DIR}${IO}ft_putendl_fd.c \
 		${SRC_DIR}${IO}ft_putstr_fd.c
 
+OBJS 		= ${SRCS:.c=.o}
 
+BONUS_SRCS 	= \
+		${SRC_DIR}${DATA_LIST}ft_lstnew.c \
+		${SRC_DIR}${DATA_LIST}ft_lstadd_front.c \
+		${SRC_DIR}${DATA_LIST}ft_lstsize.c \
+		${SRC_DIR}${DATA_LIST}ft_lstlast.c
 
-
-OBJS 	= ${SRCS:.c=.o}
-
+BONUS_OBJS 	= ${BONUS_SRCS:.c=.o}
 
 # build
 all 	: 	${NAME}
@@ -73,6 +77,9 @@ $(NAME) : 	${OBJS}
 %.o 	: 	%.c
 				${CC} ${CFLAGS} -c ${HEADER} $< -o ${<:.c=.o}
 
+bonus	:	${OBJS} ${BONUS_OBJS}
+				ar -rcs $(NAME) $^
+
 clean 	:
 				${RM} ${OBJS}
 
@@ -81,4 +88,4 @@ fclean 	: 	clean
 
 re 		: 	fclean all
 
-.PHONY 	: 	all clean fclean re
+.PHONY 	: 	all clean fclean re bonus

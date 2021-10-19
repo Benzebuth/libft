@@ -44,6 +44,17 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 
+// DATA_LIST
+typedef	struct	s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
+
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **alst, t_list *new);
+int		ft_lstsize(t_list *lst);
+
 // function for test
 char mapi_func(unsigned int i, char c)
 {
@@ -248,6 +259,27 @@ int	main(void)
 	ft_putstr_fd("new line !", myfile);
 
 	printf("putchar_fd\nputstr_fd\nputendl_fd - checkfile test_putchar_fd.txt\n\n");
+
+
+// DATA_LIST
+	printf("\033[1;31m");
+	printf("\n-- Test DATA LIST --\n\n");
+	printf("\033[0;31m");
+
+
+	long int	i;
+	int i_recu;
+	t_list *recu;
+	t_list *recu2;
+
+	i = 26;
+	recu = ft_lstnew(((void *)i));
+	recu2 = ft_lstnew(((void *)i));
+	ft_lstadd_front(&recu, recu2);
+	i_recu = (long int)recu->content;
+	printf("lstnew - %d\n", i_recu);
+	printf("lstadd_front + content:%d\n", i_recu);
+	printf("lstsize - %d\n\n", ft_lstsize(recu));
 
 	return (0);
 }

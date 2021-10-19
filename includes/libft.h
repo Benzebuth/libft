@@ -18,6 +18,13 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+// Struct
+typedef struct	s_list
+{
+    void	        *content;
+    struct s_list	*next;
+}	                t_list;
+
 // prototype
 // string
 size_t  ft_strlen(const char *s);
@@ -64,5 +71,10 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putendl_fd(char *s, int fd);
 
+// DATA_LIST
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **alst, t_list *new);
+int	    ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
 
 #endif
