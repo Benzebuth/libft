@@ -191,7 +191,7 @@ int	main(void)
 
 
 	char str_mapi[] = "abcdefg";
-	char (*ptr_mapi)(unsigned int, char) = mapi_func; // create ptr of function + assignation
+//	char (*ptr_mapi)(unsigned int, char) = mapi_func; // create ptr of function + assignation
 	printf("strmapi - %s - \"abcdefg\"\n", ft_strmapi(str_mapi, mapi_func));
 
 	char str_striteri[] = "abcdefg";

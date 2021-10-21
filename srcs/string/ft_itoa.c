@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 17:13:06 by bcolin            #+#    #+#             */
-/*   Updated: 2021/10/14 17:13:18 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/10/21 17:52:42 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	*ft_itoa(int n)
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	n_len = ft_size_nbr(n);
-	dst = (char *)malloc(sizeof(char) * (n_len + 2));
+	dst = (char *)malloc(sizeof(char) * (n_len + 1));
 	if (!dst)
 		return (NULL);
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 17:12:17 by bcolin            #+#    #+#             */
-/*   Updated: 2021/10/14 17:12:38 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/10/21 16:15:49 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	if (!dest || !src)
+	if (!dest && !src)
 		return (0);
 	while (n)
 	{

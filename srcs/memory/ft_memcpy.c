@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 18:58:34 by bcolin            #+#    #+#             */
-/*   Updated: 2021/10/11 19:42:33 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/10/21 16:15:11 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	void	*dst_final;
 
 	dst_final = dst;
+	if (!dst && !src)
+		return (NULL);
 	while (n)
 	{
 		*(char *)dst = *(char *)src;

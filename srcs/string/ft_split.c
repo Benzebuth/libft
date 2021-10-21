@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 17:34:06 by bcolin            #+#    #+#             */
-/*   Updated: 2021/10/14 21:54:41 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/10/21 17:24:54 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,28 +58,29 @@ static char	*ft_create_word(const char *str, int offset, int str_end)
 
 char	**ft_split(const char *s, char c)
 {
-	char	**dst;
-	size_t	i;
-	size_t	j;
-	int		offset;
+	char			**dst;
+	t_split_d		d;
+	int				offset;
 
+	if (!s)
+		return (NULL);
 	dst = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
-	if (!s || !dst)
-		return (0);
-	i = 0;
-	j = 0;
+	if (!dst)
+		return (NULL);
+	d.i = 0;
+	d.j = 0;
 	offset = -1;
-	while (i <= ft_strlen(s))
+	while (d.i <= ft_strlen(s))
 	{
-		if (!(ft_issep(s[i], c)) && offset < 0)
-			offset = i;
-		else if ((ft_issep(s[i], c) || i == ft_strlen(s)) && offset >= 0)
+		if (!(ft_issep(s[d.i], c)) && offset < 0)
+			offset = d.i;
+		else if ((ft_issep(s[d.i], c) || d.i == ft_strlen(s)) && offset >= 0)
 		{
-			dst[j++] = ft_create_word(s, offset, i);
+			dst[d.j++] = ft_create_word(s, offset, d.i);
 			offset = -1;
 		}
-		i++;
+		d.i++;
 	}
-	dst[j] = (void *)0;
+	dst[d.j] = (void *)0;
 	return (dst);
 }

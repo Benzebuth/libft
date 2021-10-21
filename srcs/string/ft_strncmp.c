@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 17:13:12 by bcolin            #+#    #+#             */
-/*   Updated: 2021/10/14 17:30:35 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/10/21 16:21:27 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		--n;
 	}
 	if (n)
-		return ((char)(*s1) - (char)(*s2));
+		return ((unsigned char)(*s1) - (unsigned char)(*s2));
 	return (0);
 }

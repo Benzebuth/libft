@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 17:13:14 by bcolin            #+#    #+#             */
-/*   Updated: 2021/10/14 17:13:25 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/10/21 16:20:13 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strrchr(const char *s, int c)
 	int	i;
 
 	i = ft_strlen(s);
-	if (s[0] == '\0')
+	if (!s)
 		return ((char *)s);
 	if (i > 0)
 	{
