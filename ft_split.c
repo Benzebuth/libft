@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 17:34:06 by bcolin            #+#    #+#             */
-/*   Updated: 2021/10/21 17:24:54 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/10/21 22:26:10 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	ft_count_words(const char *str, char sep)
 			flag = 1;
 			nb_words++;
 		}
-		else
+		else if (ft_issep(*str, sep))
 			flag = 0;
 		str++;
 	}
