@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/10/21 21:22:14 by bcolin            #+#    #+#              #
+#    Updated: 2021/10/21 21:22:17 by bcolin           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 #Name of archive
 NAME 	= libft.a
 
@@ -7,69 +19,58 @@ CFLAGS 	= -Wall -Werror -Wextra
 
 RM 		= rm -f
 
-#header path
-HEADER 	= -I includes
-
-#add path of dir here
-SRC_DIR 	= srcs/
-CTYPE 		= ctype/
-STRING 		= string/
-MEMORY 		= memory/
-IO			= io/
-DATA_LIST 	= data_list/
-
 #list of srcs with path
 SRCS 	= \
-		${SRC_DIR}${CTYPE}ft_isalpha.c \
-		${SRC_DIR}${CTYPE}ft_isupper.c \
-		${SRC_DIR}${CTYPE}ft_islower.c \
-		${SRC_DIR}${CTYPE}ft_isdigit.c \
-		${SRC_DIR}${CTYPE}ft_isalnum.c \
-		${SRC_DIR}${CTYPE}ft_isascii.c \
-		${SRC_DIR}${CTYPE}ft_isprint.c \
-		${SRC_DIR}${CTYPE}ft_toupper.c \
-		${SRC_DIR}${CTYPE}ft_tolower.c \
-		${SRC_DIR}${STRING}ft_strlen.c \
-		${SRC_DIR}${STRING}ft_atoi.c \
-		${SRC_DIR}${STRING}ft_strdup.c \
-		${SRC_DIR}${STRING}ft_strncmp.c \
-		${SRC_DIR}${STRING}ft_strchr.c \
-		${SRC_DIR}${STRING}ft_strrchr.c \
-		${SRC_DIR}${STRING}ft_strlcat.c \
-		${SRC_DIR}${STRING}ft_strlcpy.c \
-		${SRC_DIR}${STRING}ft_strnstr.c \
-		${SRC_DIR}${STRING}ft_itoa.c \
-		${SRC_DIR}${STRING}ft_split.c \
-		${SRC_DIR}${STRING}ft_substr.c \
-		${SRC_DIR}${STRING}ft_strjoin.c \
-		${SRC_DIR}${STRING}ft_strtrim.c \
-		${SRC_DIR}${STRING}ft_strmapi.c \
-		${SRC_DIR}${STRING}ft_striteri.c \
-		${SRC_DIR}${MEMORY}ft_memset.c \
-		${SRC_DIR}${MEMORY}ft_bzero.c \
-		${SRC_DIR}${MEMORY}ft_memcpy.c \
-		${SRC_DIR}${MEMORY}ft_memccpy.c \
-		${SRC_DIR}${MEMORY}ft_memmove.c \
-		${SRC_DIR}${MEMORY}ft_memchr.c \
-		${SRC_DIR}${MEMORY}ft_calloc.c \
-		${SRC_DIR}${MEMORY}ft_memcmp.c \
-		${SRC_DIR}${IO}ft_putchar_fd.c \
-		${SRC_DIR}${IO}ft_putnbr_fd.c \
-		${SRC_DIR}${IO}ft_putendl_fd.c \
-		${SRC_DIR}${IO}ft_putstr_fd.c
+		ft_isalpha.c \
+		ft_isupper.c \
+		ft_islower.c \
+		ft_isdigit.c \
+		ft_isalnum.c \
+		ft_isascii.c \
+		ft_isprint.c \
+		ft_toupper.c \
+		ft_tolower.c \
+		ft_strlen.c \
+		ft_atoi.c \
+		ft_strdup.c \
+		ft_strncmp.c \
+		ft_strchr.c \
+		ft_strrchr.c \
+		ft_strlcat.c \
+		ft_strlcpy.c \
+		ft_strnstr.c \
+		ft_itoa.c \
+		ft_split.c \
+		ft_substr.c \
+		ft_strjoin.c \
+		ft_strtrim.c \
+		ft_strmapi.c \
+		ft_striteri.c \
+		ft_memset.c \
+		ft_bzero.c \
+		ft_memcpy.c \
+		ft_memccpy.c \
+		ft_memmove.c \
+		ft_memchr.c \
+		ft_calloc.c \
+		ft_memcmp.c \
+		ft_putchar_fd.c \
+		ft_putnbr_fd.c \
+		ft_putendl_fd.c \
+		ft_putstr_fd.c
 
 OBJS 		= ${SRCS:.c=.o}
 
 BONUS_SRCS 	= \
-		${SRC_DIR}${DATA_LIST}ft_lstnew.c \
-		${SRC_DIR}${DATA_LIST}ft_lstadd_front.c \
-		${SRC_DIR}${DATA_LIST}ft_lstadd_back.c \
-		${SRC_DIR}${DATA_LIST}ft_lstsize.c \
-		${SRC_DIR}${DATA_LIST}ft_lstlast.c \
-		${SRC_DIR}${DATA_LIST}ft_lstdelone.c \
-		${SRC_DIR}${DATA_LIST}ft_lstclear.c \
-		${SRC_DIR}${DATA_LIST}ft_lstiter.c \
-		${SRC_DIR}${DATA_LIST}ft_lstmap.c
+		ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstadd_back.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c
 
 BONUS_OBJS 	= ${BONUS_SRCS:.c=.o}
 
@@ -80,7 +81,7 @@ $(NAME) : 	${OBJS}
 				ar -rcs $@ $^
 
 %.o 	: 	%.c
-				${CC} ${CFLAGS} -c ${HEADER} $< -o ${<:.c=.o}
+				${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 bonus	:	${OBJS} ${BONUS_OBJS}
 				ar -rcs $(NAME) $^
