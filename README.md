@@ -43,3 +43,10 @@ library of basic C functions
 | **ft_strlcpy** | `copy *src inside *dest and return length of *src` | size_t	ft_strlcpy(char *dest, const char *src, size_t size) |
 | **ft_strlen** | `return the length of *s` | char	*ft_strlen(const char *s) |
 | **ft_strmapi** | `apply fonction (*f) to *s and return the result inside a new string` | char	*ft_strmapi(const char *s, char (*f)(unsigned int, char)) |
+| **ft_strncmp** | `compare *s1 to *s2 for n` | int	ft_strncmp(const char *s1, const char *s2, size_t n) |
+| **ft_strnstr** | `search *s2 inside *s1 for n, return the address of first cara. if found or NULL` | char	*ft_strnstr(const char *s1, const char *s2, size_t n) |
+| **ft_strrchr** | `search c inside *s and return first occurence or NULL` | char	*ft_strrchr(const char *s, int c) |
+| **ft_strtrim** | `remove leading and ending of string if *set is found` | char	*ft_strtrim(char const *s1, char const *set) |
+| **ft_substr** | `return new string from *s starting from start for len` | char	*ft_substr(char const *s, unsigned int start, size_t len) |
+| **ft_tolower** | `convert c to lowercase` | int ft_tolower(int c) |
+| **ft_toupper** | `convert c to UPPERCASE` | int ft_toupper(int c) |
