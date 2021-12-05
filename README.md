@@ -1,7 +1,7 @@
 # libft
 library of basic C functions
 
-### fonctions man (lite)
+### manual fonctions (lite)
 | Fonction | Description | Prototype |
 | --- | --- | --- |
 | **ft_atoi** | `convert ASCII to integer` | int ft_atoi(const char *nptr) |
@@ -26,3 +26,6 @@ library of basic C functions
 | **ft_lstsize** | `return the number of cells inside the list` | int ft_lstsize(t_list *lst) |
 | **ft_memccpy** | `copy *src until c is found or for n time in *dest ` | void ft_memccpy(void *dest, const void *src, int c, size_t n) |
 | **ft_memchr** | `search c inside *s for n` | void *ft_memchr(const void *s, int c, size_t n) |
+| **ft_memcmp** | `return value from difference between *s1 and *s2 until difference occure or n` | int ft_memcmp(const void *s1, const void *s2, size_t n) |
+| **ft_memcpy** | `copy *src for n in *dest` | void ft_memcpy(void *dest, const void *src, size_t n) |
+| **ft_memmove** | `move memory *src for n to memory *dest` | void	*ft_memmove(void *dest, const void *src, size_t n) |
