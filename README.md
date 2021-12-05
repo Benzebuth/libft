@@ -29,3 +29,17 @@ library of basic C functions
 | **ft_memcmp** | `return value from difference between *s1 and *s2 until difference occure or n` | int ft_memcmp(const void *s1, const void *s2, size_t n) |
 | **ft_memcpy** | `copy *src for n in *dest` | void ft_memcpy(void *dest, const void *src, size_t n) |
 | **ft_memmove** | `move memory *src for n to memory *dest` | void	*ft_memmove(void *dest, const void *src, size_t n) |
+| **ft_memset** | `init area of memory *b for len with c` | void	*ft_memset(void *b, int c, size_t len) |
+| **ft_putchar_fd** | `write c inside file descriptor fd` | void	ft_putchar_fd(char c, int fd) |
+| **ft_putendl_fd** | `write *s inside file descriptor fd with \n at the end` | void	ft_putendl_fd(char *s, int fd) |
+| **ft_putnbr_fd** | `write n inside file descriptor fd` | void	ft_putnbr_fd(int n, int fd) |
+| **ft_putstr_fd** | `write *s inside file descriptor fd` | void	ft_putstr_fd(int n, int fd) |
+| **ft_split** | `cut *s with separator c and return result inside array that finish by NULL` | char	**ft_split(const char *s, char c) |
+| **ft_strchr** | `search c inside *s` | char	*ft_strchr(const char *s, int c) |
+| **ft_strdup** | `return a copy of *s` | char	*ft_strdup(const char *s) |
+| **ft_striteri** | `apply fonction (*f) to *s` | void	ft_striteri(char *s, void (*f)(unsigned int, char *)) |
+| **ft_strjoin** | `join *s1 with *s2 inside new allocate memory` | char	*ft_strjoin(char const *s1, char const *s2) |
+| **ft_strlcat** | `join *src inside *dst for size, return the length of string they try to create` | size_t	ft_strlcat(char *dst, const char *src, size_t size) |
+| **ft_strlcpy** | `copy *src inside *dest and return length of *src` | size_t	ft_strlcpy(char *dest, const char *src, size_t size) |
+| **ft_strlen** | `return the length of *s` | char	*ft_strlen(const char *s) |
+| **ft_strmapi** | `apply fonction (*f) to *s and return the result inside a new string` | char	*ft_strmapi(const char *s, char (*f)(unsigned int, char)) |
