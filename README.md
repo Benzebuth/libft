@@ -34,7 +34,7 @@ library of basic C functions
 | **ft_memset** | `init area of memory *b for len with c` | void	*ft_memset(void *b, int c, size_t len) |
 | **ft_putchar_fd** | `write c inside file descriptor fd` | void	ft_putchar_fd(char c, int fd) |
 | **ft_putnbr_fd** | `write n inside file descriptor fd` | void	ft_putnbr_fd(int n, int fd) |
-| **ft_putstr_fd** | `write *s inside file descriptor fd` | void	ft_putstr_fd(int n, int fd) |
+| **ft_putstr_fd** | `write *s inside file descriptor fd` | void	ft_putstr_fd(char *s, int fd) |
 | **ft_putendl_fd** | `write *s inside file descriptor fd with \n at the end` | void	ft_putendl_fd(char *s, int fd) |
 | **ft_split** | `cut *s with separator c and return result inside array that finish by NULL` | char	**ft_split(const char *s, char c) |
 | **ft_strchr** | `search c inside *s` | char	*ft_strchr(const char *s, int c) |
